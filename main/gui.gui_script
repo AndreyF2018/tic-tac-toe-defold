@@ -1,0 +1,123 @@
+-- gui.gui_script - с отладкой для текста
+function init(self)
+	msg.post(".", "acquire_input_focus")
+
+	self.cells = {}
+	self.markers = {}
+
+	for x = 1, 3 do
+		for y = 1, 3 do
+			local cell_name = "cell_" .. x .. "_" .. y
+			self.cells[cell_name] = gui.get_node(cell_name)
+
+			local marker_name = "marker_" .. x .. "_" .. y
+			self.markers[marker_name] = gui.get_node(marker_name)
+
+			if self.markers[marker_name] then
+				gui.set_enabled(self.markers[marker_name], false)
+			end
+		end
+	end
+
+	-- Сохраняем ссылки на текстовые ноды
+	self.winner_node = gui.get_node("winner_text")
+	self.coins_node = gui.get_node("coins_text")
+
+	-- Проверяем, найдены ли ноды
+	if self.winner_node then
+		print("winner_text найден")
+	else
+		print("winner_text НЕ НАЙДЕН! Проверьте имя ноды в GUI")
+	end
+
+	if self.coins_node then
+		print("coins_text найден")
+		-- ТЕСТ: устанавливаем тестовый текст
+		gui.set_text(self.coins_node, "Coins: 0")
+	else
+		print("✗ coins_text НЕ НАЙДЕН! Проверьте имя ноды в GUI")
+	end
+
+	print("GUI инициализирован")
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		-- Кнопка Reset
+		local reset_node = gui.get_node("reset_button")
+		if reset_node and gui.pick_node(reset_node, action.x, action.y) then
+			print("Reset нажат")
+			msg.post("game_controller", "reset")
+			return true
+		end
+
+		-- Клетки
+		for x = 1, 3 do
+			for y = 1, 3 do
+				local cell_name = "cell_" .. x .. "_" .. y
+				local node = self.cells[cell_name]
+
+				if node and gui.pick_node(node, action.x, action.y) then
+					print("Клик по клетке:", x, y)
+					msg.post("game_controller", "cell_click", {x = x, y = y})
+					return true
+				end
+			end
+		end
+	end
+end
+
+function on_message(self, message_id, message)
+	if message_id == hash("update_cell") then
+		local marker_name = "marker_" .. message.x .. "_" .. message.y
+		local marker_node = self.markers[marker_name]
+
+		if marker_node then
+			gui.set_enabled(marker_node, true)
+			if message.value == "x" then
+				gui.play_flipbook(marker_node, "x")
+			elseif message.value == "o" then
+				gui.play_flipbook(marker_node, "o")
+			end
+		end
+
+	elseif message_id == hash("reset_board") then
+		for x = 1, 3 do
+			for y = 1, 3 do
+				local marker_name = "marker_" .. x .. "_" .. y
+				local marker_node = self.markers[marker_name]
+				if marker_node then
+					gui.set_enabled(marker_node, false)
+				end
+			end
+		end
+
+	elseif message_id == hash("show_winner") then
+		if self.winner_node then
+			gui.set_text(self.winner_node, message.text)
+			print("Установлен текст победителя:", message.text)
+			timer.delay(2, false, function()
+				if self.winner_node then
+					gui.set_text(self.winner_node, "")
+				end
+			end)
+		else
+			print("Ошибка: winner_node не найден!")
+		end
+
+	elseif message_id == hash("clear_winner_text") then
+		if self.winner_node then
+			gui.set_text(self.winner_node, "")
+			print("Очищен текст победителя")
+		end
+
+	elseif message_id == hash("update_coins") then
+		if self.coins_node then
+			local text = "Coins: " .. (message.coins or 0)
+			gui.set_text(self.coins_node, text)
+			print("Установлен текст монет:", text)
+		else
+			print("Ошибка: coins_node не найден!")
+		end
+	end
+end

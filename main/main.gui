@@ -1,0 +1,424 @@
+script: "/main/gui.gui_script"
+fonts {
+  name: "main"
+  font: "/main/main.font"
+}
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+fonts {
+  name: "game"
+  font: "/main/game.font"
+}
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+textures {
+  name: "game_atlas"
+  texture: "/images/game_atlas.atlas"
+}
+nodes {
+  position {
+    x: 765.0
+    y: 787.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_3_1"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 992.0
+    y: 543.0
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/cell"
+  id: "board_bg"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 765.0
+    y: 342.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_1_1"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1222.0
+    y: 342.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_1_3"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 992.0
+    y: 344.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_1_2"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 767.0
+    y: 564.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_2_1"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 996.0
+    y: 566.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_2_2"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1220.0
+    y: 562.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_2_3"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 996.0
+    y: 789.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_3_2"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1220.0
+    y: 787.0
+  }
+  scale {
+    x: 1.794516
+    y: 1.673302
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "cell_3_3"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1215.0
+    y: 560.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_2_3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1215.0
+    y: 783.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_3_3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 758.0
+    y: 560.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_2_1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 989.0
+    y: 338.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_1_2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 989.0
+    y: 783.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_3_2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 758.0
+    y: 783.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_3_1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 758.0
+    y: 338.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_1_1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 989.0
+    y: 560.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_2_2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1215.0
+    y: 338.0
+  }
+  scale {
+    x: 0.844128
+    y: 1.084619
+    z: 1.08
+  }
+  type: TYPE_BOX
+  texture: "game_atlas/x"
+  id: "marker_1_3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 963.0
+    y: 112.0
+  }
+  scale {
+    x: 0.785118
+    y: 0.73151
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.16070949
+    y: 0.6227746
+    z: 0.75409836
+  }
+  type: TYPE_BOX
+  id: "reset_button"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1010.0
+    y: 997.0
+  }
+  scale {
+    x: 1.5
+    y: 1.5
+    z: 1.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "\n"
+  ""
+  font: "main"
+  id: "winner_text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 963.0
+    y: 114.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Reset"
+  font: "main"
+  id: "reset_button_text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 1605.0
+    y: 1003.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Coins: 0"
+  font: "main"
+  id: "coins_text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+max_nodes: 555

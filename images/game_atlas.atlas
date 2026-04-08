@@ -1,0 +1,10 @@
+images {
+  image: "/images/cell.png"
+}
+images {
+  image: "/images/x.png"
+}
+images {
+  image: "/images/o.png"
+}
+extrude_borders: 2
